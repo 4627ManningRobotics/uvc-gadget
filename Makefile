@@ -1,10 +1,10 @@
 CROSS_COMPILE	?=
-ARCH		?= x86
-KERNEL_DIR	?= /usr/src/linux
+ARCH		?= arm
+KERNEL_DIR	?= ../linux
 
 CC		:= $(CROSS_COMPILE)gcc
 KERNEL_INCLUDE	:= -I$(KERNEL_DIR)/include -I$(KERNEL_DIR)/arch/$(ARCH)/include
-CFLAGS		:= -W -Wall -g $(KERNEL_INCLUDE)
+CFLAGS		:= -W -g -I$(KERNEL_DIR)
 LDFLAGS		:= -g
 
 all: uvc-gadget
